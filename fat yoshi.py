@@ -3,9 +3,12 @@ import requests
 import shutil
 import ctypes
 import os
+import image_paths
+import random
 
 #grab image from URL
-image_url = "https://www.clipartkey.com/mpngs/m/122-1222244_fat-yoshi-transparent-fat-yoshi-transparent-background.png"
+image_url = random.choice(image_paths.IMAGES)
+print(image_url)
 
 #set file name
 filename = 'temp.png'
@@ -21,7 +24,6 @@ if r.status_code == 200:
 else:
     print('whoops')
 
-#find globl path to temporary file
 global_path = os.path.join(os.path.dirname(__file__), filename)
 
 #set wallpaper to downloaded image
